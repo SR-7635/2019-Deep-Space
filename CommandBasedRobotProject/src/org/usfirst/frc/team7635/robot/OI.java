@@ -23,6 +23,7 @@ public class OI {
 	// number it is.
 	Joystick stick = new Joystick(0);
 	Button button = new JoystickButton(stick, 1);
+	System.out.println("helloworld.");
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
