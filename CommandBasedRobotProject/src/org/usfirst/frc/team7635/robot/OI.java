@@ -10,6 +10,7 @@ package org.usfirst.frc.team7635.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.XboxController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -21,9 +22,24 @@ public class OI {
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
-	Joystick stick = new Joystick(0);
-	Button button = new JoystickButton(stick, 1);
-	System.out.println("Hello World.");
+	static Joystick JoyStick = new Joystick(0);
+	static XboxController Controller = new XboxController(1);
+	
+	static Button J1 = new JoystickButton(JoyStick, 1);
+	static Button C1 = new JoystickButton(Controller,1);
+	
+	public OI() {
+		J1.whenPressed(null);
+		C1.whenPressed(null);
+	}
+	
+	public static Joystick getJoystick() {
+		return JoyStick;
+	}
+	
+	public static XboxController getController() {
+		return Controller;
+	}
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
@@ -35,7 +51,7 @@ public class OI {
 
 	// Start the command when the button is pressed and let it run the command
 	// until it is finished as determined by it's isFinished method.
-	button.whenPressed(new DriveForward());
+	//button.whenPressed(new DriveForward());
 
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
@@ -43,5 +59,5 @@ public class OI {
 
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
-	button.whenReleased(new DriveStop());
+	//button.whenReleased(new DriveStop());
 }
