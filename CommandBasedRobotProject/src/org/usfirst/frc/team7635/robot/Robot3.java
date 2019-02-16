@@ -37,10 +37,8 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void robotInit() {
-		camera = CameraServer.getInstance().startAutomaticCapture();
-		camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
-		// create final ints 320 and 240 for them respectively
-		camera.setFPS(20)
+
+		CameraServer.getInstance().startAutomaticCapture();
 
 		m_oi = new OI();
 		chassis = new Chassis();
