@@ -1,21 +1,22 @@
-spackage org.usfirst.frc.team7635.robot.commands;
+package org.usfirst.frc.team7635.robot.subsystems;
 
-import org.usfirst.frc.team7635.robot.OI;
 import org.usfirst.frc.team7635.robot.Robot;
-import org.usfirst.frc.team7635.robot.RobotMap;
-import org.usfirst.frc.team7635.robot.subsystems.DriveTrain_Subsystem;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveTrain_Command extends Command {
+public class DriveForward extends Command {
 
-    public DriveTrain_Command() {
+    public DriveForward() {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.m_drivetrain);
+        // eg. requires(chassis);
+    	requires(Robot.drivetrain);
+
+    
     }
+
 
     // Called just before this Command runs the first time
     protected void initialize() {
@@ -23,10 +24,8 @@ public class DriveTrain_Command extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double moveSpeed = OI.getJoystick().getY();
-		double rotateSpeed = OI.getJoystick().getX();
-
-		Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    	Robot.drivetrain.forward();
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,6 +35,7 @@ public class DriveTrain_Command extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same
