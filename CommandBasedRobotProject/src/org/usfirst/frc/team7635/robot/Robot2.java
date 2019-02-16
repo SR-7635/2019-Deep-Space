@@ -7,9 +7,11 @@
 
 package org.usfirst.frc.team7635.robot;
 
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -36,7 +38,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void robotInit(
-	
+
 	camera = CameraServer.getInstance().startAutomaticCapture();
 	camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 	// create final ints 320 and 240 for them respectively
