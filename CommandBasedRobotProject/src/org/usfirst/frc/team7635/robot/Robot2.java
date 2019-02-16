@@ -22,7 +22,7 @@ import org.usfirst.frc.team7635.robot.subsystems.DriveTrain_Subsystem;
 public class Robot extends TimedRobot {
 
 	public static Chassis chassis;
-
+	public static UsbCamera camera;
 	public static OI m_OI;
 
 	Command m_autonomousCommand;
@@ -30,12 +30,18 @@ public class Robot extends TimedRobot {
 
 	/**public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 
-	 * This function is run when the robot is first started up 
+	 * This function is run when the robot is first started up
 
 	 * and should be used for any initalization code. */
 
 	@Override
-	public void robotInit() {
+	public void robotInit(s
+	camera = CameraServer.getInstance().startAutomaticCapture();
+	camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
+	// create final ints 320 and 240 for them respectively
+	camera.setFPS(20)
+
+	) {
 		m_oi = new OI();
 		chassis = new Chassis();
 		/** m_chooser.addDefault("Default Auto", new Examplecommand());
