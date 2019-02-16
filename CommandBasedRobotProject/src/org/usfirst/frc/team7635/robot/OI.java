@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.XboxController;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
+	Joystick arcadeDrive;
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
@@ -31,6 +33,11 @@ public class OI {
 	public OI() {
 		J1.whenPressed(null);
 		C1.whenPressed(null);
+		arcadeDrive = new Joystick(0);
+	}
+
+	public Joystick getArcadeDrive() {
+		return arcadeDrive;
 	}
 	
 	public static Joystick getJoystick() {
