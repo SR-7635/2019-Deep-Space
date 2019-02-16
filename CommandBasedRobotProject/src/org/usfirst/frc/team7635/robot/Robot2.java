@@ -35,7 +35,8 @@ public class Robot extends TimedRobot {
 	 * and should be used for any initalization code. */
 
 	@Override
-	public void robotInit(s
+	public void robotInit(
+	
 	camera = CameraServer.getInstance().startAutomaticCapture();
 	camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 	// create final ints 320 and 240 for them respectively
