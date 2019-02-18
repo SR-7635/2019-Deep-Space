@@ -18,39 +18,39 @@ import org.usfirst.frc.team7635.robot.subsystems.DriveTrain_Subsystem;
 public class Robot extends IterativeRobot {
 	public OI m_oi;
 	public static DriveTrain_Subsystem m_drivetrain = new DriveTrain_Subsystem();
-	e
-	
+
+
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
 	}
 
-	
+
 	@Override
 	public void disabledInit() {
 
 	}
 
-	
+
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
-	
+
 	@Override
 	public void teleopInit() {
-		
+
 	}
 
-	
+
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		
+
 	}
 
-	
+
 	@Override
 	public void testPeriodic() {
 	}
